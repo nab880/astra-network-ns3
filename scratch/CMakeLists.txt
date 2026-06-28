@@ -9,6 +9,10 @@ set(astra-sim-ns3-libs-list
 list(JOIN astra-sim-ns3-libs-list " " astra-sim-ns3-libs)
 set(astra-sim-dir "${PROJECT_SOURCE_DIR}/../../../")
 include_directories("../scratch")
+# Disable fmt consteval format-string checking for AstraSimNetwork.cc and the
+# AstraSim subdir: the bundled fmt's FMT_COMPILE_STRING consteval path fails
+# under ns-3's C++20 + modern libc++ (see docs/BUILD.md fix #2).
+add_compile_definitions(FMT_USE_CONSTEVAL=0)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../../ AstraSim)
 
 build_exec(

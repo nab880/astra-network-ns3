@@ -35,6 +35,7 @@ build_lib(
     model/rdma-driver.cc
     model/rdma-hw.cc
     model/rdma-queue-pair.cc
+    model/seq-ts-header.cc
     model/switch-mmu.cc
     model/switch-node.cc
   HEADER_FILES
@@ -56,6 +57,7 @@ build_lib(
     model/rdma-driver.h
     model/rdma-hw.h
     model/rdma-queue-pair.h
+    model/seq-ts-header.h
     model/switch-mmu.h
     model/switch-node.h
     model/trace-format.h
